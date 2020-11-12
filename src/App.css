@@ -1,38 +1,226 @@
-.App {
-  text-align: center;
+.page-wrapper {
+    padding: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-logo {
+    margin-right: 50px;
+    margin-bottom: 20px;
+    color: gray;
+    text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-header {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.links {
+    display: flex;
+    margin: 0;
+    padding-left: 0;
+
+    list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+.links li {
+    margin-right: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.links a {
+    color: black;
+    transition: color 0.2s linear;
+}
+
+.links a:hover {
+    opacity: 0.6;
+}
+
+.links a:visited {
+    color: black;
+}
+
+.visually-hidden {
+    opacity: 0;
+}
+
+.checkbox-indicator {
+    position: relative;
+
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-top: 2px;
+
+    border: 1px solid grey;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.checkbox-indicator.checked::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    display: block;
+    width: 9px;
+    height: 9px;
+    margin: auto;
+
+    background-color: grey;
+    border-radius: 2px;
+}
+
+.no-items {
+    color: grey;
+}
+
+.main-footer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 40px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.link-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 3px 0;
+}
+
+.link-wrap a {
+    margin-left: 5px;
+    color: black;
+}
+
+.employee-name {
+    font-weight: bold;
+}
+
+/*============
+    List
+============ */
+
+.employees-wrapper {
+    display: flex;
+
+    flex-wrap: wrap;
+}
+
+.employees {
+    flex-basis: 300px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.alphabet-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.alphabet-item {
+    flex-basis: 250px;
+    flex-shrink: 0;
+    flex-grow: 1;
+    margin-bottom: 30px;
+}
+
+.alphabet-item h2 {
+    margin-top: 0;
+
+    text-transform: uppercase;
+}
+
+.employees-letter-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.employees-letter-list li {
+    margin-bottom: 12px;
+}
+
+.employee-list-item:hover {
+    cursor: pointer;
+}
+
+.employees .employee-item-wrap {
+    margin-right: 5px;
+}
+
+/*===============
+    Birthday
+===============*/
+
+.employee-birthday {
+    align-self: flex-start;
+    flex-basis: 300px;
+    flex-shrink: 0;
+    padding: 20px 0 25px 25px;
+
+    border-left: 1px solid lightgray;
+}
+
+.month-label {
+    display: inline-block;
+    padding: 2px;
+    margin: 0 0 12px;
+    border-radius: 3px;
+}
+
+.month-label.winter {
+    background-color: aliceblue;
+}
+
+.month-label.spring {
+    background-color: #e1ffb2;
+}
+
+.month-label.summer {
+    background-color: #ffd5b6;
+}
+
+.month-label.autumn {
+    background-color: #f2e1c1;
+}
+
+.bdays-list {
+    list-style: none;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.bdays-list li {
+    position: relative;
+
+    margin-bottom: 13px;
+}
+
+.bdays-list li::before {
+    content: "";
+
+    position: absolute;
+    left: -20px;
+    top: 6px;
+
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+/*==========
+   Media
+========= */
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .employee-birthday {
+        flex-basis: 100%;
+    }
 }
